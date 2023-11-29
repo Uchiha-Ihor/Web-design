@@ -1,0 +1,482 @@
+/* виділення тексту */
+::selection {
+	background-color: rgba(148, 245, 192, 0.5); /* колір фону та прозорість виділеного тексту */
+	color: #000000; /* колір виділеного тексту */
+}
+
+/* Приховуємо смугу прокручування у веб-браузері, які підтримують вендорні префікси WebKit */
+::-webkit-scrollbar {
+	width: 0;
+	background: transparent; /* прозорий фон */
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Dancing Script', cursive;
+	background: #fff;
+	color: #000;
+	font-size: 15px;
+	line-height: 1.5; /* міжрядковий інтервал */
+}
+
+a {
+	color: #262626;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none; /* Відключає стандартну маркерну точку для списків */
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+}
+
+/* Nav */
+.main-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Рівномірний розподіл простору між елементами */
+	height: 60px;
+	font-size: 15px;
+}
+
+.main-nav .logo {
+	width: 110px;
+}
+
+.main-nav ul {
+	display: flex;
+}
+
+.main-nav ul li {
+	padding: 0 10px;
+}
+
+.main-nav ul li a {
+	padding-bottom: 2px;
+}
+
+.main-nav ul li a:hover {
+	border-bottom: 2px solid #e05d8e;
+}
+
+.main-nav ul.main-menu {
+	flex: 1;
+	margin-left: 20px;
+}
+
+.button {
+	cursor: pointer; /* Змінює значок курсора при наведенні */
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	z-index: 2; /* Рівень наверху інших елементів */
+	display: none; /* Початково прихований */
+}
+
+.btn {
+	cursor: pointer; /* Змінює значок курсора при наведенні */
+	display: inline-block; /* Відображається як блок в текстовому контексті */
+	border: 0;
+	font-weight: bold;
+	padding: 10px 20px;
+	background: #e05d8e;
+	color: #fff;
+	font-size: 15px;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.art {
+	color: #fff;
+}
+
+.art .btn {
+	background: #f4f4f4;
+	color: #e05d8e;
+}
+
+/* ******************************
+ 		     кнопка up
+****************************** */
+
+/* Стилі для кнопки */
+.butt {
+	text-decoration: none;
+	color: #000000;
+	background-color: #e05d8e;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	padding: 8px 20px;
+	border-radius: 10px;
+	border: 1px solid;
+	font-size: 16px;
+	font-family: 'URW Chancery L', cursive;
+}
+
+/* проховання кнопки на вузьких екранах */
+@media (max-width: 700px) {
+	.butt {
+		display: none;
+	}
+}
+
+/*****************************
+         Showcase 
+*****************************/
+.showcase {
+	width: 100%;
+	height: 92vh; /* висота видимої області картинка */
+	background: url('https://img3.akspic.ru/crops/4/2/8/1/91824/91824-nebo-zamok-videoigra-srednevekovaya_arhitektura-zhivopis-3840x2160.jpg') no-repeat center center;
+	background-size: cover; /* зберігає пропорції фото и масштабує його до заповнення блока */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: flex-end; /* Розміщує вміст внизу блока */
+	padding-bottom: 150px;
+	margin-bottom: 20px;
+	font-family: 'Dancing Script', cursive;
+	color: #fff;
+}
+
+.showcase h2,
+.showcase p {
+	margin-bottom: 10px;
+}
+
+.showcase .btn {
+	margin-top: 10px;
+}
+
+/*************************
+       Follow 
+**************************/
+.follow {
+	width: 100%;
+	display: flex;
+	flex-direction: column; /* вертикальне розположення елементів */
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+}
+
+.follow img {
+	max-width: 100%;
+	height: auto; /* Автоматична зміна висоти, щоб зберегти пропорції */
+	margin-top: 20px;
+}
+
+.follow {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	font-size: 16px;
+}
+
+/* Медіа-запрос для менших екранів */
+@media (max-width: 768px) {
+	.follow {
+		padding-top: 20px;
+		font-size: 16px;
+	}
+
+	.follow img {
+		margin-top: 20px; /* Внутрішній відступ зверху для зображення на менших екранах */
+	}
+}
+
+/***********************   
+        painting
+***********************/
+.painting {
+	display: grid; /* Відображення контейнера 'painting' як сітки */
+	grid-template-columns: repeat(4, 1fr); /* Розбиття на 4 колонки з однаковим розміром (1fr) */
+	grid-gap: 20px; /* Внутрішній відступ між елементами сітки */
+	margin-bottom: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.div1 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.painting img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.painting h3 {
+	margin-bottom: 5px;
+}
+
+.painting a {
+	display: inline-block; /* Відображення посилань як блоків в текстовому контексті */
+	padding-top: 20px;
+	color: #e05d8e;
+	text-transform: uppercase; /* Перетворення тексту в верхній регістр */
+	font-weight: bold;
+}
+
+.painting a:hover i {
+	margin-left: 10px;
+}
+
+/**********************
+        Classic
+***********************/
+/* Classic */
+.Classic {
+	width: 100%;
+	height: 350px;
+	background: url('https://img2.akspic.ru/previews/5/4/9/9/4/149945/149945-voobrazhenie-solnechnyj_svet-akvarelnaya_zhivopis-kosmos-vizualnoe_iskusstvo-x750.jpg') no-repeat center center/cover;
+	display: flex;
+	align-items: center;
+}
+
+.Classic .content {
+	width: 50% 0;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5); /* напівпрозорий фон для покращення читання тексту на тлі картинки */
+	color: #fff;
+}
+
+/* Адаптивні стилі для тексту */
+.Classic h2 {
+	font-size: 2rem; /* Розмір шрифту для великих екранів */
+	margin-bottom: 10px;
+}
+
+.Classic p {
+	font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+	.Classic {
+		height: auto;
+		background-size: cover; /* Підтримуємо cover для фону */
+	}
+
+	.Classic .content {
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.Classic h2 {
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+
+	.Classic p {
+		font-size: 1rem;
+	}
+}
+
+/**********************
+        Modern
+***********************/
+.Modern {
+	width: 100%;
+	height: 350px;
+	background: url('https://img2.akspic.ru/crops/4/9/9/4/6/164994/164994-cifrovoe_iskusstvo-art-zhivopis-proizvedenie_iskusstva-sovremennoe_iskusstvo-3840x2160.jpg') no-repeat center center/cover;
+	display: flex;
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+.Modern .content {
+	width: 50% 0;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+}
+
+.Modern h2 {
+	font-size: 2rem; /* Розмір шрифту для заголовка на великих екранах */
+	margin-bottom: 10px;
+}
+
+.Modern p {
+	font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+	.Modern {
+		height: auto;
+		background-size: cover; /* розмір фонового зображення */
+	}
+
+	.Modern .content {
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.Modern h2 {
+		font-size: 1.5rem; /* Зменшуємо розмір шрифту для заголовка на менших екранах */
+		margin-bottom: 10px;
+	}
+
+	.Modern p {
+		font-size: 1rem;
+	}
+}
+
+/* ********************
+        FOOTER
+********************** */
+
+.footer {
+	width: 100%;
+	top: 100px;
+	position: relative; /* Позиціонування блоку відносно інших елементів сторінки */
+	background-color: #040e1a;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap; /* Якщо елементи не розміщуються в одному рядку, вони будуть перенесені на наступний рядок */
+}
+
+@media (max-width: 768px) {
+	.footer {
+		flex-direction: column; /* Зміна напрямку гнучкого контейнера на вертикальний (стовпцевий) на менших екранах */
+		text-align: center;
+		justify-content: center;
+	}
+
+	.footer .col {
+		width: auto;
+		margin: 5px;
+	}
+}
+.footer .col h1 {
+	margin: 0;
+	padding: 0;
+	font-family: inherit; /* Використовує шрифт батьківського елемента */
+	font-size: 12px;
+	line-height: 17px;
+	padding: 20px 0px 5px 0px;
+	font-weight: normal; /* Звичайна жирність шрифту */
+	text-transform: uppercase; /* Перетворення тексту в верхній регістр */
+	letter-spacing: 0.25em; /* Міжлітерний інтервал */
+	font-family: 'Dancing Script', cursive;
+	text-align: center;
+	color: #fff;
+}
+
+.footer .col ul {
+	list-style-type: none; /* Відключення маркерів списку */
+	margin: 0;
+	padding: 0;
+	font-family: 'Dancing Script', cursive;
+}
+
+.footer .col ul li {
+	color: #999999;
+	font-size: 14px;
+	font-family: inherit; /* Використовує шрифт батьківського елемента */
+	font-weight: bold;
+	padding: 5px 0px 5px 0px;
+}
+
+.social ul li {
+	display: inline-block; /* Відображення елементів списку як блоків в текстовому контексті */
+	padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+	color: #ffffff;
+}
+
+@media only screen and (min-width: 1920px) {
+	.contain {
+		width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.contain .social {
+		width: 1000px;
+		display: block; /* Відображення елементу 'social' як блоку (один нижче одного) */
+	}
+	.social h1 {
+		margin: 0px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.footer .col {
+		width: 33%;
+	}
+	.footer .col h1 {
+		font-size: 14px;
+	}
+	.footer .col ul li {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.footer .col {
+		width: 50%;
+	}
+	.footer .col h1 {
+		font-size: 14px;
+	}
+	.footer .col ul li {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.footer .col {
+		width: 100%;
+	}
+}
+
+/* *************************
+        SIZE DISPLAY
+ ***************************/
+
+@media (max-width: 700px) {
+	.painting {
+		grid-template-columns: repeat(2, 1fr); /* Змінюємо кількість колонок в сітці на 2 на менших екранах */
+	}
+	.Modern .content {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
+/* Розмір екрану 320px і менше */
+@media (max-width: 320px) {
+	.painting {
+		grid-template-columns: repeat(1, 1fr); /* Одна колонка на рядок на екранах ≤ 320px */
+	}
+
+	.painting img {
+		width: 100%; /* Заповнює всю ширину екрану */
+		margin-bottom: 20px;
+	}
+}
